@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="test2Styles.css">
+
+<body data-main-popup="0">
+    <div class="onContainer">
+        <button id="t1OnButton" class="onButton">Launch Service Wizard</button>
+    </div>
+
+    <div class="frameContainer" data-srcc="0" data-endc="0" data-srvc="0">
+        <div id="popupContainer" data-active="src">
+            <div class="header">Service Creation Wizard</div>
+            <div id="diagramContainer">
+                <div class="diagramDescription">
+                    <div class="diagramDescriptionHeader">Configure Service</div>
+                    <div class="diagramDescriptionBody">
+                        <div class="diagramDescriptionLabels">
+                            <span>Source:</span>
+                            <span>Endpoint:</span>
+                            <span>Service:</span>
+                        </div>
+                        <div class="diagramDescriptionDefinitions">
+                            <span>Configure a source of data to pull from</span>
+                            <span>Configure an enpoint to accept pushed data</span>
+                            <span>Set time settings, filters, and all other data</span>
+                            <span>configuration</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="diagram">
+                    <div class="diagramTopRow">
+                        <div id="t1SourceSettings" class="diagramButton diagramSourceButton">Source Settings</div>
+                        <img class="diagramArrow">
+                        <div id="t1EndpointSettings" class="diagramButton diagramEndpointButton">Endpoint Settings</div>
+                    </div>
+                    <div id="t1ServiceSettings" class="diagramButton diagramServiceButton">Service Settings</div>
+                </div>
+            </div>
+            <div class="forward body srcBody">
+                <div class="forward entryLabels">
+                    <div>URL</div>
+                    <div>Client ID</div>
+                    <div>Secret</div>
+                </div>
+                <div class="forward entrySpaces">
+                    <input>
+                    <input>
+                    <input>
+                </div>
+            </div>
+            <div class="forward body endBody">
+                <div class="forward entryLabels">
+                    <div>URL</div>
+                    <div>Client ID</div>
+                </div>
+                <div class="forward entrySpaces">
+                    <input>
+                    <input>
+                </div>
+            </div>
+            <div class="forward body srvBody">
+                <div class="forward entryLabels">
+                    <div>Mode</div>
+                    <div>Start Time</div>
+                    <div>End Time</div>
+                    <div>Flags</div>
+                    <div>Order</div>
+                </div>
+                <div class="forward entrySpaces">
+                    <input>
+                    <input>
+                    <input>
+                    <input>
+                    <input>
+                </div>
+            </div>
+            <div class="footer">
+                <div id="wizCancel" class="button cancel">Cancel</div>
+                <div id="wizConfirm" class="button confirm">Confirm</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="test2Script.js"></script>

@@ -1,0 +1,128 @@
+:root {
+    --activeGreen: #8bca7c;
+    --inactiveGreen: #b5d6ad;
+    --backgroundGreen: #d6e6d2;
+    --activeBlue: #7caad8;
+    --inactiveBlue: #b6d2dd;
+    --backgroundBlue: #d7dee1;
+    --activeRed: rgb(255, 146, 146);
+}
+
+html {
+    overflow:hidden;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    height: 100%;
+
+    background-color: #d3d3d3;
+    margin: 0;
+    padding: 10px;
+
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mainContainer {
+    display: flex;
+    width: 70%;
+    height: 100%;
+    min-width: 400px;
+
+    flex-direction: column;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    
+    border-radius: 20px 20px 0 0;
+}
+#mainContainer[data-selected="1"] #header {
+    background-color: var(--inactiveBlue);
+}
+#mainContainer[data-selected="2"] #header {
+    background-color: var(--inactiveGreen);
+}
+
+.testButton {
+    display: flex;
+    width: 50%;
+    height: 70px;
+
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#test1Button {
+    background-color: var(--inactiveGreen);
+    border-radius: 20px 0 0 0;
+}
+#mainContainer[data-selected="1"] #test1Button {
+    background-color: var(--activeGreen);
+    border-radius: 20px 20px 0 0;
+}
+#test1Button:hover {
+    cursor: pointer;
+}
+
+#test2Button {
+    background-color: var(--inactiveBlue);
+    border-radius: 0 20px 0 0;
+}
+#mainContainer[data-selected="2"] #test2Button {
+    background-color: var(--activeBlue);
+    border-radius: 20px 20px 0 0;
+}
+#test2Button:hover {
+    cursor: pointer;
+}
+
+
+#display {
+    display: flex;
+
+    height: 100%;
+}
+
+#mainContainer[data-selected="1"] #display {
+    border:  5px solid var(--activeGreen);
+}
+#mainContainer[data-selected="2"] #display {
+    border:  5px solid var(--activeBlue);
+}
+
+.view {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+
+    align-items: center;
+    overflow: hidden;
+}
+
+
+#test1View {
+    background-color: var(--backgroundGreen);
+}
+#mainContainer[data-selected="2"] #test1View {
+    display: none;
+}
+
+#test2View {
+    background-color: var(--backgroundBlue);
+}
+#mainContainer[data-selected="1"] #test2View {
+    display: none;
+}

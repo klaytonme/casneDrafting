@@ -1,0 +1,325 @@
+:root {
+    --activeGreen: #8bca7c;
+    --inactiveGreen: #b5d6ad;
+    --backgroundGreen: #d6e6d2;
+    --activeBlue: #7caad8;
+    --inactiveBlue: #b6d2dd;
+    --backgroundBlue: #d7dee1;
+    --activeRed: rgb(255, 146, 146);
+}
+
+.onContainer {
+    display: flex;
+    width: 100%;
+
+    align-items: center;
+}
+
+.onButton {
+    width: 150px;
+    height: 50px;
+
+    border-radius: 5px;
+
+    margin: auto;
+}
+.onButton:hover {
+    cursor: pointer;
+}
+.onButton:active {
+    background-color: gray;
+}
+
+
+.frameContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    align-items: center;
+    justify-content: center;
+}
+
+body[data-main-popup="0"] .frameContainer {
+    display: none;
+}
+
+#popupContainer {
+    display: flex;
+    height: 500px;
+    width: 700px;
+
+    background-color: #bababa;
+    border: 2px black solid;
+    border-radius: 10px;
+
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.header {
+    top: 0;
+    width: 100%;
+
+    font-size: 20px;
+    color: white;
+
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #3219bf;
+}
+
+.popupBody {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.diagram {
+    display: flex;
+
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.diagramTopRow {
+    display: flex;
+    margin-bottom: 20px;
+
+    flex-direction: row;
+}
+
+.diagramArrow {
+    width: 200px;
+    background-image: url(assets/chevron.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.diagramDescription {
+    display: flex;
+    margin-bottom: 20px;
+
+    border: 2px black dotted;
+    border-radius: 5px;
+
+    padding: 10px;
+    align-items: center;
+    flex-direction: column;
+}
+.diagramDescriptionHeader {
+    width: fit-content;
+    margin-bottom: 10px;
+
+    text-align: center;
+    font-size: 30px;
+    border-bottom: 1px black solid;
+}
+.diagramDescriptionBody {
+    display: flex;
+    flex-direction: row;
+}
+.diagramDescriptionLabels {
+    display: flex;
+    margin-right: 10px;
+
+    flex-direction: column;
+    align-items: end;
+}
+.diagramDescriptionDefinitions {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.diagramButton {
+    display: flex;
+    height: 70px;
+    width: 120px;
+
+    background-color: lightgray;
+    border-radius: 10px;
+    font-size: 20px;
+
+    align-items: center;
+    text-align: center;
+}
+.diagramButton:hover {
+    cursor: pointer;
+}
+
+.diagramSourceButton {
+    margin-right: 20px;
+}
+.frameContainer[data-srcc="1"] .diagramSourceButton {
+    background-color: var(--inactiveGreen);
+}
+
+.diagramEndpointButton {
+    margin-left: 20px;
+}
+.frameContainer[data-endc="1"] .diagramEndpointButton {
+    background-color: var(--inactiveGreen);
+}
+
+.diagramServiceButton {
+    box-sizing: border-box; 
+    align-self: center;
+    margin: 0;
+}
+.frameContainer[data-srvc="1"] .diagramServiceButton {
+    background-color: var(--inactiveGreen);
+}
+
+
+
+
+.frameContainer[data-forwardpop = "0"] {
+    display: none;
+}
+
+.forward.pop {
+    display: flex;
+    height: 450px;
+    width: 750px;
+
+    background-color: #dddddd;
+    border: 2px black solid;
+    border-radius: 10px;
+
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.forward.header {
+    display:flex;
+    width: 100%;
+
+    font-size: 20px;
+    color: white;
+
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #3219bf;
+}
+
+#popupPopup:not([data-caller="src"]) .forward.srcHeader {
+    display: none;
+}
+#popupPopup:not([data-caller="end"]) .forward.endHeader {
+    display: none;
+}
+#popupPopup:not([data-caller="srv"]) .srvHeader {
+    display: none;
+}
+
+.forward.body {
+    display: flex;
+    height: 100%;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#popupPopup:not([data-caller="src"]) .forward.srcBody {
+    display: none;
+}
+#popupPopup:not([data-caller="end"]) .endBody {
+    display: none;
+}
+#popupPopup:not([data-caller="srv"]) .srvBody {
+    display: none;
+}
+
+.forward.entryLabels {
+    display: flex;
+
+    font-size: 20px;
+
+    margin-right: 20px;
+    flex-direction: column;
+    align-items: end;
+}
+.forward.entryLabels div {
+    height: 40px;
+
+    margin-bottom: 10px;
+}
+
+.forward.entrySpaces {
+    display: flex;
+
+    flex-direction: column;
+    align-items: start
+}
+.forward.entrySpaces input {
+    height: 40px;
+    width: 350px;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+}
+
+
+.button {
+    display: flex;
+    height: 50px;
+    width: 130px;
+
+    font-size: 20px;
+    border-radius: 5px;
+
+    align-items: center;
+    justify-content: center;
+}
+.button:hover {
+    cursor: pointer;
+}
+.button.confirm {
+    background-color: #b2b2ff;
+}
+.frameContainer[data-srcc="1"][data-endc="1"][data-srvc="1"] .button.confirm {
+    background-color: #8d8dfe;
+}
+.button.confirm:hover {
+    background-color: rgb(193, 193, 252);
+}
+.button.cancel {
+    background-color: lightgrey;
+    margin-right: 15px;
+}
+.button.cancel:hover {
+    background-color: #dfdfdf;
+}
+
+
+.footer {
+    display: flex;
+    
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #bababa;
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+}
